@@ -12,8 +12,9 @@ typedef struct {
 
 #define INIT_CAPACITY 1000
 
-/* Initialize array of type T
-* Params: T* arr (ensure arr is NULL)
+/* @brief Initialize array of type T
+*  @param T* arr (ensure arr is NULL)
+*  @example arr_mc.c
 */
 #define arr_init(arr) \
 do{\
@@ -25,8 +26,8 @@ do{\
 	}\
 } while(0)
 
-/* Initialize array of type T with capacity c
-* Params: T* arr, array ptr (ensure arr is NULL); size_t c, capacity
+/* @brief Initialize array of type T with capacity c
+*  @param T* arr, array ptr (ensure arr is NULL); size_t c, capacity
 */
 #define arr_init_c(arr, c) \
 do{\
@@ -38,8 +39,9 @@ do{\
 	}\
 } while(0)
 
-/* 1. Intialize array of type T if uninitialized; 2. Push x to array
-* Params: T* arr, array ptr; T x, value to be pushed
+/* @brief Intialize array of type T if uninitialized; Push x to array
+*  @param T* arr, array ptr; T x, value to be pushed
+   @example arr_mc.c
 */
 #define arr_push(arr, x)	\
 do {\
@@ -61,18 +63,20 @@ do {\
 	arr[h->count++] = x;\
 } while (0)
 
-/* Free array
-* Params: T* arr, array ptr
+/* @brief Free array
+*  @param T* arr - array ptr
+*  @example arr_mc.c
 */
 #define arr_free(arr) free((Header*)(arr)-1)
 
-/* Get # of items in array
-* Params: T* arr, array ptr
+/* @brief Get # of items in array
+*  @param T* arr, array ptr
+*  @example arr_mc.c
 */
 #define arr_count(arr) ((Header*)(arr)-1)->count
 
-/* Get capacity of array
-* Params: T* arr, array ptr
+/* @brief Get capacity of array
+*  @param T* arr, array ptr
 */
 #define arr_capacity(arr) ((Header*)(arr)-1)->capacity
 
