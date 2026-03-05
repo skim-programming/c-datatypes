@@ -80,4 +80,14 @@ do {\
 */
 #define arr_capacity(arr) ((Header*)(arr)-1)->capacity
 
+/* @brief Pop back of array
+*  @param T* arr, array ptr
+*/
+#define arr_pop(arr) if (arr_count(arr) > 0) arr[arr_count(arr)-1] = 0
+
+/* @brief Get back of array
+*  @param T* arr, array ptr
+*/
+#define arr_back(arr) arr[arr_count(arr)-1]
+
 #endif
